@@ -58,7 +58,7 @@ function putS3 {
   filename=$(basename "$sourcePath")
 
   # get content type
-  content_type=$(filename --mime-type -b "${sourcePath}")
+  content_type=$(file --mime-type -b "${sourcePath}")
   if [[ ! "$content_type" =~ $MIMEPATTERN ]]
   then
     content_type="application/octet-stream"
